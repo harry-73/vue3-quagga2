@@ -44,7 +44,7 @@ const quaggaConfig = ref<QuaggaJSConfigObject>({
 		willReadFrequently: true,
 	},
 	locator: {
-		halfSample: true,
+		halfSample: false,
 		patchSize: props.patchSize,
 	},
 	numOfWorkers: self.navigator.hardwareConcurrency,
