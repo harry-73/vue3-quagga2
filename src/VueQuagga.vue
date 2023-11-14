@@ -1,11 +1,6 @@
 <template>
 	<div ref="interactive" id="interactive" class="viewport">
-		<video
-			autoplay="true"
-			preload="auto"
-			muted="true"
-			playsinline="true"
-		></video>
+		<video autoplay="true" preload="auto" muted="true" playsinline="true"></video>
 		<canvas class="drawingBuffer"></canvas>
 	</div>
 </template>
@@ -19,6 +14,7 @@ import { onMounted, onUnmounted, ref } from "vue";
 
 export interface Props {
 	debug?: boolean;
+	deviceId?: string;
 	facingMode?: string;
 	patchSize?: string;
 	numOfWorkers?: number;
@@ -67,6 +63,7 @@ onMounted(() => {
 		height: interactive.value?.offsetWidth,
 		width: interactive.value?.offsetHeight,
 		facingMode: props.facingMode,
+		deviceId: props.deviceId,
 		aspectRatio:
 			interactive.value!.offsetWidth / interactive.value!.offsetHeight,
 	};
@@ -154,6 +151,7 @@ const onDetected = (result: QuaggaJSResultObject) => {
 #interactive video {
 	margin: 0 auto;
 }
+
 #interactive canvas.drawingBuffer {
 	position: absolute;
 	left: 0;
