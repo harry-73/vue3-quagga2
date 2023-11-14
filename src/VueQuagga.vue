@@ -20,6 +20,7 @@ import { onMounted, onUnmounted, ref } from "vue";
 export interface Props {
 	debug?: boolean;
 	facingMode?: string;
+	deviceId?: string;
 	patchSize?: string;
 	numOfWorkers?: number;
 	readers: string[];
@@ -67,6 +68,7 @@ onMounted(() => {
 		height: interactive.value?.offsetWidth,
 		width: interactive.value?.offsetHeight,
 		facingMode: props.facingMode,
+		deviceId: props.deviceId,
 		aspectRatio:
 			interactive.value!.offsetWidth / interactive.value!.offsetHeight,
 	};
