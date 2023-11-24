@@ -15,6 +15,7 @@
 		"dev": "vite",
 		"dev-network": "vite --host",
 		"build": "run-p build:components build:types",
+		"prepare": "npm run build",
 		"build:components": "vite build",
 		"build:types": "vue-tsc --project tsconfig.build-types.json --declaration --emitDeclarationOnly --outDir dist/types ",
 		"typecheck": "vue-tsc --project tsconfig.build-types.json --noEmit",
