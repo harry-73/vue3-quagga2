@@ -10,7 +10,7 @@ import Quagga, {
 	type QuaggaJSConfigObject,
 	type QuaggaJSResultObject,
 } from "@ericblade/quagga2";
-import { onMounted, onUnmounted, ref } from "vue";
+import { onMounted, onUnmounted, ref, defineExpose } from "vue";
 
 export interface Props {
 	debug?: boolean;
@@ -59,9 +59,10 @@ const quaggaConfig = ref<QuaggaJSConfigObject>({
 });
 
 onMounted(() => {
+	console.log("H + W:", interactive.value?.offsetHeight, interactive.value?.offsetWidth)
 	quaggaConfig.value.inputStream!.constraints = {
-		height: interactive.value?.offsetWidth,
-		width: interactive.value?.offsetHeight,
+		height: interactive.value?.offsetHeight,
+		width: interactive.value?.offsetWidth,
 		facingMode: props.facingMode,
 		deviceId: props.deviceId,
 		aspectRatio:
@@ -82,6 +83,24 @@ onMounted(() => {
 onUnmounted(() => {
 	Quagga.offDetected(onDetected);
 	Quagga.stop();
+});
+
+const onPause = () => {
+	console.log("onPause");
+	Quagga.offProcessed(onProcessed);
+	Quagga.offDetected(onDetected);
+};
+
+const onPlay = () => {
+	console.log("onPplay");
+	Quagga.onDetected(onDetected);
+	Quagga.onProcessed(onProcessed);
+};
+
+defineExpose({
+	onPause,
+	onPlay,
+
 });
 
 const onProcessed = (result: QuaggaJSResultObject) => {

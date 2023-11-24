@@ -10,7 +10,6 @@
 		"url": "git+https://github.com/florianrusch/vue3-quagga2.git"
 	},
 	"private": false,
-	"type": "module",
 	"scripts": {
 		"dev": "vite",
 		"dev-network": "vite --host",
