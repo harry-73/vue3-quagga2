@@ -49,10 +49,6 @@
 		"dist",
 		"LICENSE"
 	],
-	"engines": {
-		"node": ">= 18.0",
-		"npm": ">= 7.0"
-	},
 	"main": "dist/vue3-quagga2.umd.js",
 	"module": "dist/vue3-quagga2.es.js",
 	"types": "dist/types/index.d.ts"
