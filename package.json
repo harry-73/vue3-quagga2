@@ -9,6 +9,7 @@
 		"type": "git",
 		"url": "git+https://github.com/florianrusch/vue3-quagga2.git"
 	},
+	"module": "src/index.ts",
 	"private": false,
 	"scripts": {
 		"dev": "vite",
@@ -50,6 +51,5 @@
 		"LICENSE"
 	],
 	"main": "dist/vue3-quagga2.umd.js",
-	"module": "dist/vue3-quagga2.es.js",
 	"types": "dist/types/index.d.ts"
 }
