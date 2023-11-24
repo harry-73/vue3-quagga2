@@ -7,7 +7,7 @@
 	"license": "Unlicense",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/florianrusch/vue3-quagga2.git"
+		"url": "git+https://github.com/harry-73/vue3-quagga2.git"
 	},
 	"module": "src/index.ts",
 	"private": false,
