@@ -16,6 +16,7 @@ export interface Props {
 	debug?: boolean;
 	deviceId?: string;
 	facingMode?: string;
+	deviceId?: string;
 	patchSize?: string;
 	numOfWorkers?: number;
 	readers: string[];
