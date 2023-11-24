@@ -14,7 +14,6 @@ import { onMounted, onUnmounted, ref, defineExpose } from "vue";
 
 export interface Props {
 	debug?: boolean;
-	deviceId?: string;
 	facingMode?: string;
 	deviceId?: string;
 	patchSize?: string;
